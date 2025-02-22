@@ -1,0 +1,15 @@
+.header {
+    background-color: #1c140d;
+    width: auto;
+    height: 60px;
+}
+
+.logo {
+    color: #ffffff;
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+.logo span {
+    color: #cbe86b;
+}
