@@ -1,0 +1,16 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+app-aside-bar {
+  flex-shrink: 0; /* barra lateral con ancho fijo */
+  border-right: 1px solid #ddd;
+
+}
+
+.main-content {
+  flex-grow: 1; /* ocupa todo el espacio restante */
+  display: flex;
+  flex-direction: column;
+}

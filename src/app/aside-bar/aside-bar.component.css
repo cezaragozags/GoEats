@@ -1,0 +1,45 @@
+.aside-bar {
+  width: 200px;
+  height: 60%;
+  background: #ffffff; /* más claro como en la referencia */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  align-items: center;
+  display: flex;
+}
+
+.aside-bar li {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.aside-bar li:hover {
+  color: #618C03;
+}
+
+.aside-bar img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.aside-bar li:hover img {
+  opacity: 1;
+}
+
+.config {
+  margin-top: 40px;
+  padding-top: 15px;
+  padding: 30px;
+  color: #888;
+  font-weight: bold;
+}

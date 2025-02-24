@@ -1,1 +1,97 @@
-<p>main-container works!</p>
+<div class="padding"></div>
+
+<div class="main-container">
+  <!-- Menú desplegable -->
+  <div class="dropdown">
+    <p (click)="toggleDropdown()" class="dropdown-btn">
+      {{ selectedCategory }}
+    </p>
+    <ul *ngIf="dropdownOpen" class="dropdown-menu">
+      <li
+        *ngFor="let category of categories"
+        (click)="selectCategory(category)"
+      >
+        {{ category }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Formulario para agregar platillo -->
+  <div class="form-container">
+    <div class="select-img">
+      <button class="select-image-btn" (click)="imageInput.click()">
+        Seleccionar imagen
+      </button>
+      <img
+        *ngIf="selectedImage"
+        [src]="selectedImage"
+        class="preview-image"
+        alt="Preview"
+      />
+      <input
+        #imageInput
+        type="file"
+        accept="image/*"
+        hidden
+        (change)="onImageSelected($event)"
+      />
+    </div>
+ 
+    <div>
+      <input
+        type="text"
+        class="small-input"
+        placeholder="Título"
+        [(ngModel)]="newDish.title"
+      />
+      <input
+        type="number"
+        class="small-input"
+        placeholder="Precio"
+        [(ngModel)]="newDish.price"
+        min="0"
+      />
+      <input
+        type="number"
+        class="small-input"
+        placeholder="Cantidad"
+        [(ngModel)]="newDish.quantity"
+        min="0"
+      />
+      <textarea
+        class="description-input"
+        placeholder="Descripción"
+        [(ngModel)]="newDish.description"
+      ></textarea>
+    </div>
+    <div class="form-buttons">
+      <button class="btn cancel-btn" (click)="clearForm()">Cancelar</button>
+      <button class="btn add-btn" (click)="addDish()">Agregar</button>
+    </div>
+  </div>
+
+  <!-- Lista de platillos -->
+  <div class="alimentos-container">
+    <h3 class="section-title">Alimentos</h3>
+    <div *ngFor="let dish of filteredDishes" class="platillo">
+      <img [src]="dish.image" class="platillo-img" alt="Dish" />
+      <div class="platillo-info">
+        <strong>{{ dish.title }}</strong>
+        <p>{{ dish.description }}</p>
+      </div>
+      <div class="platillo-controls">
+        <span>Cantidad:</span>
+        <input type="number" [(ngModel)]="dish.quantity" min="1" />
+        <span
+          [ngClass]="{ expensive: dish.price > 100, cheap: dish.price <= 100 }"
+        >
+          ${{ dish.price }}
+        </span>
+        <span class="disponible" *ngIf="dish.quantity > 0">Disponible</span>
+        <span class="no-disponible" *ngIf="dish.quantity === 0"
+          >No Disponible</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
