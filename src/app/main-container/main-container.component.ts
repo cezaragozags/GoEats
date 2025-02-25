@@ -24,9 +24,9 @@ export class MainContainerComponent {
   };
 
   dishes = [
-    { title: 'Huevos Estrellados', description: 'Elegir cantidad.', quantity: 2, price: 120, image: '/8.png', category: 'Desayuno' },
+    { title: 'Huevos Estrellados', description: 'Elegir cantidad.', quantity: 1, price: 120, image: '/8.png', category: 'Desayuno' },
     { title: 'Filete con Champiñones', description: 'Elegir termino de carne y complementos.', quantity: 0, price: 120, image: '/11.png', category: 'Comida' },
-    { title: 'Sincronizada', description: 'Elegir complemento.', quantity: 2, price: 120, image: '/14.png', category: 'Cena' }
+    { title: 'Sincronizada', description: 'Elegir complemento.', quantity: 1, price: 120, image: '/14.png', category: 'Cena' }
   ];
 
   get filteredDishes() {

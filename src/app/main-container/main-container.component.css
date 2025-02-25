@@ -2,7 +2,7 @@
   padding: 10px;
   border-right: 1px solid #ddd;
   width: 80%;
-  height: 110%;
+  height: 627px;
 }
 
 .padding {
@@ -49,6 +49,7 @@
 .dropdown-menu li {
   padding: 8px;
   cursor: pointer;
+  color: #aaaaaa;
 }
 
 .dropdown-menu li:hover {
@@ -201,7 +202,7 @@
   width: 50px;
   height: 50px;
   object-fit: cover;
-  border-style: dotted;
+  border: 2px dashed #ccc;
 }
 
 .select-img {

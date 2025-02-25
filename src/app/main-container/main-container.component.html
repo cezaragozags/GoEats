@@ -6,9 +6,9 @@
     <p (click)="toggleDropdown()" class="dropdown-btn">
       {{ selectedCategory }}
     </p>
-    <ul *ngIf="dropdownOpen" class="dropdown-menu">
+    <ul *ngIf="dropdownOpen" class="dropdown-menu"> <!--configurar para usar con el @ngIf-->
       <li
-        *ngFor="let category of categories"
+        *ngFor="let category of categories" 
         (click)="selectCategory(category)"
       >
         {{ category }}
@@ -87,7 +87,7 @@
         >
           ${{ dish.price }}
         </span>
-        <span class="disponible" *ngIf="dish.quantity > 0">Disponible</span>
+        <span class="disponible" *ngIf="dish.quantity > 0">Disponible</span> <!--revisar para usar con atributos de ngStyle, ngClass-->
         <span class="no-disponible" *ngIf="dish.quantity === 0"
           >No Disponible</span
         >
